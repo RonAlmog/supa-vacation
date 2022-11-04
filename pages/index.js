@@ -21,7 +21,7 @@ export default function Home({ homes = [] }) {
 export async function getServerSideProps() {
   const prisma = new PrismaClient();
   const homes = await prisma.home.findMany();
-  console.log("homes", homes);
+
   return {
     props: {
       homes: JSON.parse(JSON.stringify(homes)),
