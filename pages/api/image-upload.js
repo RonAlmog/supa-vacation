@@ -33,10 +33,8 @@ export default async function handler(req, res) {
       if (UploadError) {
         throw new Error("Unable to upload image to storage");
       }
-      const url = `${process.env.SUPABASE_URL.replace(
-        ".co",
-        ".in"
-      )}/storage/v1/object/public/${data.Key}`;
+
+      const url = `${process.env.SUPABASE_URL}/storage/v1/object/public/${process.env.SUPABASE_BUCKET}/${data.path}`;
       return res.status(200).json({ url });
     } catch (error) {
       res.status(500).json({ message: "Something went wrong" });

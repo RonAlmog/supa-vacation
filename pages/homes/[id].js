@@ -55,7 +55,7 @@ export async function getStaticPaths() {
         id: home.id,
       },
     })),
-    fallback: false,
+    fallback: true,
   };
 }
 
