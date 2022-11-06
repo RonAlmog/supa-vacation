@@ -10,6 +10,7 @@
   "dependencies": {
     "@headlessui/react": "^1.4.3",
     "@heroicons/react": "^1.0.5",
+    "@next-auth/prisma-adapter": "^1.0.5",
     "@prisma/client": "^4.5.0",
     "@supabase/supabase-js": "^2.0.5",
     "@tailwindcss/forms": "^0.4.0",
@@ -19,6 +20,8 @@
     "formik": "^2.2.9",
     "nanoid": "^4.0.0",
     "next": "12.0.10",
+    "next-auth": "^4.15.2",
+    "nodemailer": "^6.8.0",
     "prop-types": "^15.8.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -33,5 +36,8 @@
     "postcss": "^8.4.6",
     "prisma": "^4.5.0",
     "tailwindcss": "^3.0.18"
+  },
+  "resolutions": {
+    "autoprefixer": "10.4.13"
   }
 }
