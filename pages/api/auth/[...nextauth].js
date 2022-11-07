@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import EmailProvider from "next-auth/providers/email";
+import GoogleProvider from "next-auth/providers/google";
 import nodemailer from "nodemailer";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
@@ -64,6 +65,10 @@ const sendWelcomEmail = async ({ user }) => {
 
 export default NextAuth({
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
+    }),
     EmailProvider({
       // these are commented since we use our own method for sending email.
       // the function sendVerificationRequest will use 'transporter' that uses the server values.

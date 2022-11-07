@@ -68,6 +68,15 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
   const [showConfirm, setConfirm] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);
 
+  const signInWithGoogle = () => {
+    toast.loading("Redirecting...");
+    setDisabled(true);
+    // perform signin
+    signIn("google", {
+      callbackUrl: window.location.href,
+    });
+  };
+
   const signInWithEmail = async ({ email }) => {
     let toastId;
     try {
@@ -89,10 +98,6 @@ const AuthModal = ({ show = false, onClose = () => null }) => {
     } finally {
       setDisabled(false);
     }
-  };
-
-  const signInWithGoogle = () => {
-    // TODO: Perform Google auth
   };
 
   const closeModal = () => {
